@@ -1,0 +1,218 @@
+2025-01-22 00:53:59,770 - WARNING -  * Debugger is active!
+2025-01-22 00:53:59,783 - INFO -  * Debugger PIN: 103-412-547
+2025-01-22 00:55:21,733 - INFO - 127.0.0.1 - - [22/Jan/2025 00:55:21] "GET / HTTP/1.1" 200 -
+2025-01-22 00:55:35,076 - INFO - Sending SMS - Valid Numbers: 5, Invalid Numbers: 0
+2025-01-22 00:55:35,398 - INFO - SMS Request - Numbers: ['905051430606', '905051430606', '905051430606', '905051430606', '905051430606'], Message: deneme2
+2025-01-22 00:55:35,398 - INFO - API Response: {
+"MessageId":284499878286,
+"Status":"OK"
+}
+2025-01-22 00:55:35,754 - ERROR - Report API Error: Expecting value: line 2 column 1 (char 2)
+2025-01-22 00:55:35,756 - INFO - 127.0.0.1 - - [22/Jan/2025 00:55:35] "POST /send_sms HTTP/1.1" 200 -
+2025-01-22 00:55:41,081 - ERROR - Report API Error: Expecting value: line 2 column 1 (char 2)
+2025-01-22 00:55:41,083 - INFO - 127.0.0.1 - - [22/Jan/2025 00:55:41] "GET /check_status/284499878286 HTTP/1.1" 200 -
+2025-01-22 00:56:12,768 - INFO -  * Detected change in 'C:\\Users\\nursb\\OneDrive\\Masaüstü\\cursor\\app.py', reloading
+2025-01-22 00:56:17,053 - WARNING -  * Debugger is active!
+2025-01-22 00:56:17,073 - INFO -  * Debugger PIN: 103-412-547
+2025-01-22 00:56:17,234 - INFO - 127.0.0.1 - - [22/Jan/2025 00:56:17] "GET / HTTP/1.1" 200 -
+2025-01-22 00:56:45,932 - ERROR - Error in send_sms: Excel dosyalarýný okumak için pandas kütüphanesi gerekli.
+2025-01-22 00:56:45,933 - INFO - 127.0.0.1 - - [22/Jan/2025 00:56:45] "POST /send_sms HTTP/1.1" 200 -
+2025-01-22 01:04:32,410 - INFO - 127.0.0.1 - - [22/Jan/2025 01:04:32] "GET / HTTP/1.1" 200 -
+2025-01-22 01:04:51,107 - ERROR - Error in send_sms: Excel file format cannot be determined, you must specify an engine manually.
+2025-01-22 01:04:51,109 - INFO - 127.0.0.1 - - [22/Jan/2025 01:04:51] "POST /send_sms HTTP/1.1" 200 -
+2025-01-22 01:05:15,118 - INFO -  * Detected change in 'C:\\Users\\nursb\\OneDrive\\Masaüstü\\cursor\\create_excel.py', reloading
+2025-01-22 01:05:19,429 - WARNING -  * Debugger is active!
+2025-01-22 01:05:19,445 - INFO -  * Debugger PIN: 103-412-547
+2025-01-22 01:06:56,270 - INFO -  * Detected change in 'C:\\Users\\nursb\\OneDrive\\Masaüstü\\cursor\\app.py', reloading
+2025-01-22 01:06:59,481 - WARNING -  * Debugger is active!
+2025-01-22 01:06:59,491 - INFO -  * Debugger PIN: 103-412-547
+2025-01-22 01:08:08,671 - INFO - 127.0.0.1 - - [22/Jan/2025 01:08:08] "GET / HTTP/1.1" 200 -
+2025-01-22 01:08:25,775 - ERROR - Excel reading error: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2025-01-22 01:08:25,776 - ERROR - Error in send_sms: Excel dosyasý okuma hatasý: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2025-01-22 01:08:25,777 - INFO - 127.0.0.1 - - [22/Jan/2025 01:08:25] "POST /send_sms HTTP/1.1" 200 -
+2025-01-22 01:11:02,425 - ERROR - Excel reading error: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2025-01-22 01:11:02,425 - ERROR - Error in send_sms: Excel dosyasý okuma hatasý: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2025-01-22 01:11:02,426 - INFO - 127.0.0.1 - - [22/Jan/2025 01:11:02] "POST /send_sms HTTP/1.1" 200 -
+2025-01-22 01:11:05,758 - INFO - 127.0.0.1 - - [22/Jan/2025 01:11:05] "GET / HTTP/1.1" 200 -
+2025-01-22 01:11:16,522 - ERROR - Excel reading error: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2025-01-22 01:11:16,522 - ERROR - Error in send_sms: Excel dosyasý okuma hatasý: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2025-01-22 01:11:16,523 - INFO - 127.0.0.1 - - [22/Jan/2025 01:11:16] "POST /send_sms HTTP/1.1" 200 -
+2025-01-22 01:14:09,906 - INFO -  * Detected change in 'C:\\Users\\nursb\\OneDrive\\Masaüstü\\cursor\\app.py', reloading
+2025-01-22 01:14:14,523 - WARNING -  * Debugger is active!
+2025-01-22 01:14:14,532 - INFO -  * Debugger PIN: 103-412-547
+2025-01-22 01:15:27,282 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-22 01:15:27,283 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-22 01:15:27,286 - INFO -  * Restarting with stat
+2025-01-22 01:15:29,646 - WARNING -  * Debugger is active!
+2025-01-22 01:15:29,654 - INFO -  * Debugger PIN: 103-412-547
+2025-01-22 01:28:15,964 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-22 01:28:15,964 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-22 01:28:15,969 - INFO -  * Restarting with stat
+2025-01-22 01:28:18,668 - WARNING -  * Debugger is active!
+2025-01-22 01:28:18,681 - INFO -  * Debugger PIN: 103-412-547
+2025-01-22 01:38:29,645 - INFO -  * Detected change in 'C:\\Users\\nursb\\OneDrive\\Masaüstü\\cursor\\app.py', reloading
+2025-01-22 01:38:29,671 - INFO -  * Detected change in 'C:\\Users\\nursb\\OneDrive\\Masaüstü\\cursor\\app.py', reloading
+2025-01-22 01:38:29,976 - INFO -  * Restarting with stat
+2025-01-22 01:38:30,315 - INFO -  * Detected change in 'C:\\Users\\nursb\\OneDrive\\Masaüstü\\cursor\\app.py', reloading
+2025-01-22 01:38:30,653 - INFO -  * Restarting with stat
+2025-01-22 01:38:37,026 - WARNING -  * Debugger is active!
+2025-01-22 01:38:37,035 - INFO -  * Debugger PIN: 103-412-547
+2025-01-22 01:38:37,213 - WARNING -  * Debugger is active!
+2025-01-22 01:38:37,223 - INFO -  * Debugger PIN: 103-412-547
+2025-01-22 16:25:40,792 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-22 16:25:40,794 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-22 16:25:40,799 - INFO -  * Restarting with stat
+2025-01-22 16:25:43,776 - WARNING -  * Debugger is active!
+2025-01-22 16:25:43,802 - INFO -  * Debugger PIN: 103-412-547
+2025-01-22 16:28:52,439 - INFO - Successfully loaded SMS_API_CONFIG
+2025-01-22 16:28:52,446 - INFO - Starting Flask application...
+2025-01-22 16:28:52,710 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-22 16:28:52,711 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-22 16:28:52,718 - INFO -  * Restarting with stat
+2025-01-22 16:28:56,139 - INFO - Successfully loaded SMS_API_CONFIG
+2025-01-22 16:28:56,153 - INFO - Starting Flask application...
+2025-01-22 16:28:56,261 - WARNING -  * Debugger is active!
+2025-01-22 16:28:56,284 - INFO -  * Debugger PIN: 103-412-547
+2025-01-22 16:29:03,698 - INFO - 127.0.0.1 - - [22/Jan/2025 16:29:03] "GET / HTTP/1.1" 200 -
+2025-01-22 16:29:44,191 - INFO - Sending SMS - Valid Numbers: 1, Invalid Numbers: 0
+2025-01-22 16:29:44,192 - INFO - Sending SMS request to https://yurticisms1.com/sms_api
+2025-01-22 16:29:44,201 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 16:29:44,730 - DEBUG - https://yurticisms1.com:443 "POST /sms_api HTTP/1.1" 200 None
+2025-01-22 16:29:44,736 - INFO - SMS Request - Numbers: ['905073904343'], Message: deneme
+2025-01-22 16:29:44,737 - INFO - API Response: {
+"MessageId":284760267478,
+"Status":"OK"
+}
+2025-01-22 16:29:44,741 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 16:29:45,086 - DEBUG - https://yurticisms1.com:443 "POST /sms_api/report HTTP/1.1" 200 None
+2025-01-22 16:29:45,088 - ERROR - Report API Error: Expecting value: line 2 column 1 (char 2)
+2025-01-22 16:29:45,090 - INFO - 127.0.0.1 - - [22/Jan/2025 16:29:45] "POST /send_sms HTTP/1.1" 200 -
+2025-01-22 16:29:50,134 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 16:29:50,429 - DEBUG - https://yurticisms1.com:443 "POST /sms_api/report HTTP/1.1" 200 None
+2025-01-22 16:29:50,431 - ERROR - Report API Error: Expecting value: line 2 column 1 (char 2)
+2025-01-22 16:29:50,433 - INFO - 127.0.0.1 - - [22/Jan/2025 16:29:50] "GET /check_status/284760267478 HTTP/1.1" 200 -
+2025-01-22 16:30:44,198 - INFO - Sending SMS - Valid Numbers: 1, Invalid Numbers: 0
+2025-01-22 16:30:44,346 - INFO - Sending SMS request to https://yurticisms1.com/sms_api
+2025-01-22 16:30:44,429 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 16:30:44,805 - DEBUG - https://yurticisms1.com:443 "POST /sms_api HTTP/1.1" 200 None
+2025-01-22 16:30:44,807 - INFO - SMS Request - Numbers: ['905073904343'], Message: deneme
+2025-01-22 16:30:44,807 - INFO - API Response: {
+"MessageId":284760800675,
+"Status":"OK"
+}
+2025-01-22 16:30:44,810 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 16:30:45,103 - DEBUG - https://yurticisms1.com:443 "POST /sms_api/report HTTP/1.1" 200 None
+2025-01-22 16:30:45,106 - ERROR - Report API Error: Expecting value: line 2 column 1 (char 2)
+2025-01-22 16:30:45,107 - INFO - 127.0.0.1 - - [22/Jan/2025 16:30:45] "POST /send_sms HTTP/1.1" 200 -
+2025-01-22 16:30:50,136 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 16:30:50,410 - DEBUG - https://yurticisms1.com:443 "POST /sms_api/report HTTP/1.1" 200 None
+2025-01-22 16:30:50,424 - ERROR - Report API Error: Expecting value: line 2 column 1 (char 2)
+2025-01-22 16:30:50,462 - INFO - 127.0.0.1 - - [22/Jan/2025 16:30:50] "GET /check_status/284760800675 HTTP/1.1" 200 -
+2025-01-22 16:31:16,845 - INFO - Sending SMS - Valid Numbers: 1, Invalid Numbers: 0
+2025-01-22 16:31:16,854 - INFO - Sending SMS request to https://yurticisms1.com/sms_api
+2025-01-22 16:31:16,865 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 16:31:17,166 - DEBUG - https://yurticisms1.com:443 "POST /sms_api HTTP/1.1" 200 None
+2025-01-22 16:31:17,216 - INFO - SMS Request - Numbers: ['905051430606'], Message: deneme
+2025-01-22 16:31:17,254 - INFO - API Response: {
+"MessageId":284760963145,
+"Status":"OK"
+}
+2025-01-22 16:31:17,315 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 16:31:17,658 - DEBUG - https://yurticisms1.com:443 "POST /sms_api/report HTTP/1.1" 200 None
+2025-01-22 16:31:17,660 - ERROR - Report API Error: Expecting value: line 2 column 1 (char 2)
+2025-01-22 16:31:17,662 - INFO - 127.0.0.1 - - [22/Jan/2025 16:31:17] "POST /send_sms HTTP/1.1" 200 -
+2025-01-22 16:31:22,739 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 16:31:23,001 - DEBUG - https://yurticisms1.com:443 "POST /sms_api/report HTTP/1.1" 200 None
+2025-01-22 16:31:23,004 - ERROR - Report API Error: Expecting value: line 2 column 1 (char 2)
+2025-01-22 16:31:23,005 - INFO - 127.0.0.1 - - [22/Jan/2025 16:31:23] "GET /check_status/284760963145 HTTP/1.1" 200 -
+2025-01-22 16:31:57,580 - INFO - Sending SMS - Valid Numbers: 1, Invalid Numbers: 0
+2025-01-22 16:31:57,580 - INFO - Sending SMS request to https://yurticisms1.com/sms_api
+2025-01-22 16:31:57,583 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 16:31:57,862 - DEBUG - https://yurticisms1.com:443 "POST /sms_api HTTP/1.1" 200 None
+2025-01-22 16:31:57,865 - INFO - SMS Request - Numbers: ['905073904343'], Message: deneme
+2025-01-22 16:31:57,866 - INFO - API Response: {
+"MessageId":284761190603,
+"Status":"OK"
+}
+2025-01-22 16:31:57,870 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 16:31:58,135 - DEBUG - https://yurticisms1.com:443 "POST /sms_api/report HTTP/1.1" 200 None
+2025-01-22 16:31:58,137 - ERROR - Report API Error: Expecting value: line 2 column 1 (char 2)
+2025-01-22 16:31:58,141 - INFO - 127.0.0.1 - - [22/Jan/2025 16:31:58] "POST /send_sms HTTP/1.1" 200 -
+2025-01-22 16:32:04,262 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 16:32:04,588 - DEBUG - https://yurticisms1.com:443 "POST /sms_api/report HTTP/1.1" 200 None
+2025-01-22 16:32:04,593 - ERROR - Report API Error: Expecting value: line 2 column 1 (char 2)
+2025-01-22 16:32:04,595 - INFO - 127.0.0.1 - - [22/Jan/2025 16:32:04] "GET /check_status/284761190603 HTTP/1.1" 200 -
+2025-01-22 17:10:31,382 - INFO - 127.0.0.1 - - [22/Jan/2025 17:10:31] "GET / HTTP/1.1" 200 -
+2025-01-22 17:10:45,223 - INFO - Sending SMS - Valid Numbers: 1, Invalid Numbers: 0
+2025-01-22 17:10:45,224 - INFO - Sending SMS request to https://yurticisms1.com/sms_api
+2025-01-22 17:10:45,251 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 17:10:45,856 - DEBUG - https://yurticisms1.com:443 "POST /sms_api HTTP/1.1" 200 None
+2025-01-22 17:10:45,861 - INFO - SMS Request - Numbers: ['905060357327'], Message: deneme
+2025-01-22 17:10:45,862 - INFO - API Response: {
+"MessageId":284776771476,
+"Status":"OK"
+}
+2025-01-22 17:10:45,866 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 17:10:46,129 - DEBUG - https://yurticisms1.com:443 "POST /sms_api/report HTTP/1.1" 200 None
+2025-01-22 17:10:46,133 - ERROR - Report API Error: Expecting value: line 2 column 1 (char 2)
+2025-01-22 17:10:46,135 - INFO - 127.0.0.1 - - [22/Jan/2025 17:10:46] "POST /send_sms HTTP/1.1" 200 -
+2025-01-22 17:10:51,226 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 17:10:51,490 - DEBUG - https://yurticisms1.com:443 "POST /sms_api/report HTTP/1.1" 200 None
+2025-01-22 17:10:51,492 - ERROR - Report API Error: Expecting value: line 2 column 1 (char 2)
+2025-01-22 17:10:51,494 - INFO - 127.0.0.1 - - [22/Jan/2025 17:10:51] "GET /check_status/284776771476 HTTP/1.1" 200 -
+2025-01-22 17:11:45,632 - INFO -  * Detected change in 'C:\\Users\\nursb\\OneDrive\\Masaüstü\\cursor\\app.py', reloading
+2025-01-22 17:11:47,821 - INFO -  * Restarting with stat
+2025-01-22 17:11:55,460 - INFO - Successfully loaded SMS_API_CONFIG
+2025-01-22 17:11:55,463 - INFO - Starting Flask application...
+2025-01-22 17:11:55,639 - WARNING -  * Debugger is active!
+2025-01-22 17:11:55,686 - INFO -  * Debugger PIN: 103-412-547
+2025-01-22 17:12:22,784 - INFO - Sending SMS - Valid Numbers: 1, Invalid Numbers: 0
+2025-01-22 17:12:22,784 - INFO - Sending SMS request to https://yurticisms1.com/sms_api
+2025-01-22 17:12:22,799 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 17:12:24,449 - DEBUG - https://yurticisms1.com:443 "POST /sms_api HTTP/1.1" 200 None
+2025-01-22 17:12:24,708 - INFO - SMS Request - Numbers: ['905060357327'], Message: neptü n
+2025-01-22 17:12:24,767 - INFO - API Response: {
+"MessageId":284777614843,
+"Status":"OK"
+}
+2025-01-22 17:12:24,780 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 17:12:25,134 - DEBUG - https://yurticisms1.com:443 "POST /sms_api/report HTTP/1.1" 200 None
+2025-01-22 17:12:25,139 - ERROR - Report API Error: Expecting value: line 2 column 1 (char 2)
+2025-01-22 17:12:25,187 - INFO - 127.0.0.1 - - [22/Jan/2025 17:12:25] "POST /send_sms HTTP/1.1" 200 -
+2025-01-22 17:12:30,216 - DEBUG - Starting new HTTPS connection (1): yurticisms1.com:443
+2025-01-22 17:12:30,566 - DEBUG - https://yurticisms1.com:443 "POST /sms_api/report HTTP/1.1" 200 None
+2025-01-22 17:12:30,568 - ERROR - Report API Error: Expecting value: line 2 column 1 (char 2)
+2025-01-22 17:12:30,570 - INFO - 127.0.0.1 - - [22/Jan/2025 17:12:30] "GET /check_status/284777614843 HTTP/1.1" 200 -
+2025-01-22 17:15:55,270 - INFO -  * Detected change in 'C:\\Users\\nursb\\OneDrive\\Masaüstü\\cursor\\app.py', reloading
+2025-01-22 17:15:55,924 - INFO -  * Restarting with stat
+2025-01-22 17:16:00,060 - INFO - Successfully loaded SMS_API_CONFIG
+2025-01-22 17:16:00,075 - INFO - Starting Flask application...
+2025-01-22 17:16:00,169 - WARNING -  * Debugger is active!
+2025-01-22 17:16:00,186 - INFO -  * Debugger PIN: 103-412-547
+2025-01-22 17:16:18,672 - INFO - 127.0.0.1 - - [22/Jan/2025 17:16:18] "GET / HTTP/1.1" 200 -
+2025-01-22 17:17:11,523 - INFO -  * Detected change in 'C:\\Users\\nursb\\OneDrive\\Masaüstü\\cursor\\app.py', reloading
+2025-01-22 17:17:11,839 - INFO -  * Restarting with stat
+2025-01-22 17:17:15,039 - INFO - Successfully loaded SMS_API_CONFIG
+2025-01-22 17:17:15,042 - INFO - Starting Flask application...
+2025-01-22 17:17:15,135 - WARNING -  * Debugger is active!
+2025-01-22 17:17:15,154 - INFO -  * Debugger PIN: 103-412-547
+2025-01-22 17:25:58,436 - INFO - 127.0.0.1 - - [22/Jan/2025 17:25:58] "GET / HTTP/1.1" 200 -
+2025-01-22 17:27:26,953 - INFO - 127.0.0.1 - - [22/Jan/2025 17:27:26] "GET / HTTP/1.1" 200 -
+2025-01-22 17:30:30,944 - INFO -  * Detected change in 'C:\\Users\\nursb\\OneDrive\\Masaüstü\\cursor\\config.example.py', reloading
+2025-01-22 17:30:32,642 - INFO -  * Restarting with stat
+2025-01-22 17:30:40,055 - INFO - Successfully loaded SMS_API_CONFIG
+2025-01-22 17:30:40,065 - INFO - Starting Flask application...
+2025-01-22 17:30:40,309 - WARNING -  * Debugger is active!
+2025-01-22 17:30:40,427 - INFO -  * Debugger PIN: 103-412-547
+2025-01-22 17:31:39,463 - INFO - 127.0.0.1 - - [22/Jan/2025 17:31:39] "GET / HTTP/1.1" 200 -
+2025-01-22 17:31:41,920 - INFO - 127.0.0.1 - - [22/Jan/2025 17:31:41] "GET / HTTP/1.1" 200 -
+2025-01-22 17:39:53,655 - INFO -  * Detected change in 'C:\\Users\\nursb\\OneDrive\\Masaüstü\\cursor\\app.py', reloading
+2025-01-22 17:39:54,308 - INFO -  * Restarting with stat
+2025-01-22 20:32:42,472 - INFO -  * Restarting with stat
+2025-01-22 20:38:36,209 - INFO -  * Restarting with stat
+2025-01-22 20:40:51,423 - INFO -  * Restarting with stat
+2025-01-22 20:48:03,797 - INFO -  * Restarting with stat

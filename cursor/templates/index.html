@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Gönderim Sistemi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container { max-width: 800px; }
+        .form-container { margin-top: 2rem; }
+        #resultTable, #invalidNumbersTable { display: none; }
+        .status-waiting { color: #f0ad4e; }
+        .status-delivered { color: #5cb85c; }
+        .status-error { color: #d9534f; }
+        .char-count-warning { color: #d9534f; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2 class="mb-4">SMS Gönderim Sistemi</h2>
+            
+            <form id="smsForm" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mesaj</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    <div class="form-text">
+                        Karakter sayısı: <span id="charCount">0</span>
+                        <span id="charWarning" class="char-count-warning" style="display: none;">
+                            (Dikkat: Uzun mesajlar birden fazla SMS olarak gönderilecek)
+                        </span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Telefon Numaraları</label>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="manual_numbers" class="form-label">Manuel Numara Girişi</label>
+                                <textarea class="form-control" id="manual_numbers" name="manual_numbers" rows="4" 
+                                    placeholder="Her satıra bir numara gelecek şekilde yazın&#10;Örnek:&#10;05051234567&#10;+905051234567&#10;5051234567"></textarea>
+                                <div class="form-text">Her satıra bir numara gelecek şekilde yazın</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="number_file" class="form-label">VEYA Dosyadan Yükle (TXT/Excel)</label>
+                                <input type="file" class="form-control" id="number_file" name="number_file" accept=".txt,.xlsx,.xls">
+                                <div class="form-text">
+                                    TXT dosyası: Her satırda bir numara olmalı<br>
+                                    Excel dosyası: İlk sütunda numaralar olmalı<br>
+                                    Desteklenen formatlar: 05051234567, 5051234567, +905051234567
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="submitBtn">Gönder</button>
+            </form>
+
+            <div id="resultTable" class="mt-4">
+                <h3>Gönderim Sonuçları</h3>
+                <div class="alert alert-info" id="statusUpdateInfo" style="display: none;">
+                    Durum bilgileri otomatik olarak güncellenmektedir...
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Numara</th>
+                            <th>Durum</th>
+                            <th>Mesaj</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultBody"></tbody>
+                </table>
+            </div>
+
+            <div id="invalidNumbersTable" class="mt-4">
+                <h3>Geçersiz Numaralar</h3>
+                <div class="alert alert-warning">
+                    Aşağıdaki numaralar geçersiz format nedeniyle gönderilemedi:
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Numara</th>
+                            <th>Hata</th>
+                        </tr>
+                    </thead>
+                    <tbody id="invalidNumbersBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentMessageId = null;
+        let statusCheckInterval = null;
+
+        // Character counter with warning
+        document.getElementById('message').addEventListener('input', function(e) {
+            const charCount = e.target.value.length;
+            document.getElementById('charCount').textContent = charCount;
+            document.getElementById('charWarning').style.display = 
+                charCount > 160 ? 'inline' : 'none';
+        });
+
+        function getStatusClass(status) {
+            switch(status) {
+                case 'Rapor Bekliyor':
+                    return 'status-waiting';
+                case 'İletildi':
+                    return 'status-delivered';
+                case 'Zaman Aşımı':
+                case 'İletilmedi':
+                    return 'status-error';
+                default:
+                    return '';
+            }
+        }
+
+        function updateStatus() {
+            if (!currentMessageId) return;
+
+            fetch(`/check_status/${currentMessageId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const reports = data.Response?.Report?.List || [];
+                    reports.forEach(report => {
+                        const row = document.querySelector(`tr[data-number="${report.GSM}"]`);
+                        if (row) {
+                            const statusCell = row.querySelector('.status-cell');
+                            statusCell.textContent = report.State;
+                            statusCell.className = `status-cell ${getStatusClass(report.State)}`;
+                        }
+                    });
+
+                    // Stop checking if all messages are delivered or failed
+                    const allComplete = reports.every(report => 
+                        report.State === 'İletildi' || 
+                        report.State === 'Zaman Aşımı' || 
+                        report.State === 'İletilmedi'
+                    );
+
+                    if (allComplete && statusCheckInterval) {
+                        clearInterval(statusCheckInterval);
+                        document.getElementById('statusUpdateInfo').style.display = 'none';
+                    }
+                })
+                .catch(error => console.error('Status check error:', error));
+        }
+
+        document.getElementById('smsForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Gönderiliyor...';
+            
+            const formData = new FormData(e.target);
+            
+            try {
+                const response = await fetch('/send_sms', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (result.status === 'error') {
+                    alert('Hata: ' + result.message);
+                    return;
+                }
+
+                // Show results table
+                document.getElementById('resultTable').style.display = 'block';
+                document.getElementById('statusUpdateInfo').style.display = 'block';
+                const resultBody = document.getElementById('resultBody');
+                resultBody.innerHTML = '';
+                
+                // Show invalid numbers if any
+                const invalidNumbersTable = document.getElementById('invalidNumbersTable');
+                const invalidNumbersBody = document.getElementById('invalidNumbersBody');
+                if (result.invalid_numbers && result.invalid_numbers.length > 0) {
+                    invalidNumbersTable.style.display = 'block';
+                    invalidNumbersBody.innerHTML = result.invalid_numbers.map(num => `
+                        <tr>
+                            <td>${num}</td>
+                            <td>Geçersiz format</td>
+                        </tr>
+                    `).join('');
+                } else {
+                    invalidNumbersTable.style.display = 'none';
+                }
+                
+                currentMessageId = result.message_id;
+                
+                // Display initial results
+                result.numbers.forEach((number, index) => {
+                    const status = result.report[index]?.State || 'Rapor Bekliyor';
+                    const row = document.createElement('tr');
+                    row.setAttribute('data-number', number);
+                    row.innerHTML = `
+                        <td>${number}</td>
+                        <td class="status-cell ${getStatusClass(status)}">${status}</td>
+                        <td>${result.message}</td>
+                    `;
+                    resultBody.appendChild(row);
+                });
+
+                // Start status checking
+                if (statusCheckInterval) {
+                    clearInterval(statusCheckInterval);
+                }
+                statusCheckInterval = setInterval(updateStatus, 5000); // Check every 5 seconds
+                
+            } catch (error) {
+                alert('Bir hata oluştu: ' + error.message);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Gönder';
+            }
+        });
+    </script>
+</body>
+</html> 

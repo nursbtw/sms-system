@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: sms-sender
+    env: python
+    buildCommand: "pip install -r ${RENDER_REPO_ROOT}/requirements.txt"
+    startCommand: "gunicorn app:app --bind=0.0.0.0:$PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: SMS_API_URL
+        sync: false
+      - key: SMS_USERNAME
+        sync: false
+      - key: SMS_PASSWORD
+        sync: false
+      - key: PORT
+        value: 10000 
